@@ -1,0 +1,61 @@
+{
+  "environment": "PROD",
+  "source": "JSON",
+  "generated_at": "2026-05-02T18:45:24",
+  "results": [
+    {
+      "asset_id": "APP-001",
+      "asset_name": "customer-portal",
+      "asset_type": "application",
+      "owner": "support-team",
+      "status": "active",
+      "last_checked_days": 2,
+      "findings": [],
+      "risk_score": 0,
+      "risk_level": "LOW",
+      "recommendation": "No immediate action required. Continue routine inventory monitoring."
+    },
+    {
+      "asset_id": "DB-001",
+      "asset_name": "orders-database",
+      "asset_type": "database",
+      "owner": "backend-team",
+      "status": "active",
+      "last_checked_days": 14,
+      "findings": [],
+      "risk_score": 1,
+      "risk_level": "LOW",
+      "recommendation": "No immediate action required. Continue routine inventory monitoring."
+    },
+    {
+      "asset_id": "API-001",
+      "asset_name": "payment-api",
+      "asset_type": "api",
+      "owner": "UNASSIGNED",
+      "status": "active",
+      "last_checked_days": 31,
+      "findings": [
+        "Missing asset owner",
+        "Asset health check is overdue"
+      ],
+      "risk_score": 9,
+      "risk_level": "HIGH",
+      "recommendation": "Immediate operational review required. Assign ownership, verify status, and update health records."
+    },
+    {
+      "asset_id": "SRV-001",
+      "asset_name": "legacy-reporting-service",
+      "asset_type": "service",
+      "owner": "operations-team",
+      "status": "inactive",
+      "last_checked_days": 60,
+      "findings": [
+        "Asset is not active",
+        "Asset health check is overdue"
+      ],
+      "risk_score": 9,
+      "risk_level": "HIGH",
+      "recommendation": "Immediate operational review required. Assign ownership, verify status, and update health records."
+    }
+  ]
+}

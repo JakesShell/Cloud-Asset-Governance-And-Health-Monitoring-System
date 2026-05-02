@@ -1,0 +1,5 @@
+asset_id,asset_name,asset_type,owner,status,last_checked_days,risk_score,risk_level,recommendation
+APP-001,customer-portal,application,support-team,active,2,0,LOW,No immediate action required. Continue routine inventory monitoring.
+DB-001,orders-database,database,backend-team,active,14,1,LOW,No immediate action required. Continue routine inventory monitoring.
+API-001,payment-api,api,UNASSIGNED,active,31,9,HIGH,"Immediate operational review required. Assign ownership, verify status, and update health records."
+SRV-001,legacy-reporting-service,service,operations-team,inactive,60,9,HIGH,"Immediate operational review required. Assign ownership, verify status, and update health records."

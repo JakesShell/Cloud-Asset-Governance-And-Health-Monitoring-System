@@ -1,0 +1,63 @@
+Cloud Asset Governance And Health Monitoring Report
+==============================================================
+Environment: PROD
+Source: JSON
+Total Assets Reviewed: 4
+High Risk Assets: 2
+Medium Risk Assets: 0
+Low Risk Assets: 2
+Overdue Health Checks: 2
+Unassigned Assets: 1
+
+Asset ID: APP-001
+Asset Name: customer-portal
+Asset Type: application
+Owner: support-team
+Status: active
+Last Checked: 2 days ago
+Risk Score: 0
+Risk Level: LOW
+Findings: No major issues detected
+Recommended Action:
+- No immediate action required. Continue routine inventory monitoring.
+--------------------------------------------------------------
+Asset ID: DB-001
+Asset Name: orders-database
+Asset Type: database
+Owner: backend-team
+Status: active
+Last Checked: 14 days ago
+Risk Score: 1
+Risk Level: LOW
+Findings: No major issues detected
+Recommended Action:
+- No immediate action required. Continue routine inventory monitoring.
+--------------------------------------------------------------
+Asset ID: API-001
+Asset Name: payment-api
+Asset Type: api
+Owner: UNASSIGNED
+Status: active
+Last Checked: 31 days ago
+Risk Score: 9
+Risk Level: HIGH
+Findings:
+- Missing asset owner
+- Asset health check is overdue
+Recommended Action:
+- Immediate operational review required. Assign ownership, verify status, and update health records.
+--------------------------------------------------------------
+Asset ID: SRV-001
+Asset Name: legacy-reporting-service
+Asset Type: service
+Owner: operations-team
+Status: inactive
+Last Checked: 60 days ago
+Risk Score: 9
+Risk Level: HIGH
+Findings:
+- Asset is not active
+- Asset health check is overdue
+Recommended Action:
+- Immediate operational review required. Assign ownership, verify status, and update health records.
+--------------------------------------------------------------

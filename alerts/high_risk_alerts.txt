@@ -1,0 +1,6 @@
+High Risk Asset Alerts
+==============================
+Environment: PROD
+
+API-001 | payment-api | HIGH | Immediate operational review required. Assign ownership, verify status, and update health records.
+SRV-001 | legacy-reporting-service | HIGH | Immediate operational review required. Assign ownership, verify status, and update health records.

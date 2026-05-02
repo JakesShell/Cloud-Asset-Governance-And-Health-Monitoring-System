@@ -1,127 +1,219 @@
-# Library Operations Database
+﻿# Cloud Asset Governance And Health Monitoring System
 
 ## Overview
 
-Library Operations Database is a SQL project that models the core data layer for a library system. It includes a relational schema for authors, books, clients, and borrowing records, along with seed data and example business queries.
+This project simulates a cloud operations tool used to review asset inventory records, identify ownership gaps, detect stale health checks, classify operational risk, generate alerts, and export reports for support teams.
 
-This repository was cleaned up from a PDF-only submission and converted into runnable SQL scripts so it is easier to review, run, and extend.
+It reflects how cloud support teams maintain visibility across applications, databases, APIs, and services in a production-style environment.
 
-## Real-World Business Use Case
+---
 
-This project maps to a real library or school media center workflow.
+## Project Objective
 
-A library needs to answer questions such as:
+To analyze cloud asset inventory records and classify operational risk based on ownership, activity status, asset type, and health-check freshness.
 
-- Which books are currently in the catalog?
-- Which author wrote each book?
-- Which clients borrow books most often?
-- What genres are most common?
-- How many borrowing transactions happened in a given year?
+The system focuses on:
 
-A structured relational database makes these operations reliable and searchable. This kind of schema could support a school library portal, a community library system, or the back end for a book circulation dashboard.
+- Asset Inventory Review
+- Multi-Source Ingest Using JSON And CSV
+- Missing Ownership Detection
+- Inactive Resource Identification
+- Stale Health-Check Detection
+- Risk Scoring And Classification
+- High-Risk Alert Generation
+- Environment-Aware Audit Logging
+- Human-Readable, JSON, And CSV Reporting
+- API-Style Output For Service-Based Consumption
 
-## Repository Files
+---
 
-- `schema.sql` - creates the database, tables, relationships, and index
-- `seed_data.sql` - loads sample records for authors, books, clients, and borrowing transactions
-- `queries.sql` - example business queries for reporting and analysis
-- `DataBase Data.docx.pdf` - original project source document
-- `README.md` - project explanation and run instructions
+## Simulated Environment
 
-## Database Schema
+- Cloud Application Environment
+- Multiple Asset Types Including Applications, Databases, APIs, And Services
+- Inventory Records Stored In JSON And CSV Formats
+- Operational Health Review Workflow
+- Environment-Specific Reporting And Logging
+- Alert Output For High-Risk Assets
 
-The project defines four core tables:
+---
 
-1. `Author`
-   - `AuthorID`
-   - `AuthorFirstName`
-   - `AuthorLastName`
-   - `AuthorNationality`
+## Operations Scenario
 
-2. `Book`
-   - `BookID`
-   - `BookTitle`
-   - `AuthorID`
-   - `Genre`
+A cloud support team needs to review asset inventory to identify resources that may create operational risk.
 
-3. `Client`
-   - `ClientID`
-   - `ClientFirstName`
-   - `ClientLastName`
-   - `ClientDOB`
-   - `Occupation`
+Risk may come from missing ownership, inactive services, outdated health checks, poor asset visibility, unclear operational responsibility, and high-risk databases or APIs requiring closer review.
 
-4. `Borrower`
-   - `BorrowID`
-   - `ClientID`
-   - `BookID`
-   - `BorrowDate`
+---
 
-Relationships:
-- Each `Book` belongs to one `Author`
-- Each `Borrower` record links one `Client` to one `Book`
+## System Architecture
 
-## Key Features
+- Data Layer: JSON And CSV Asset Inventory Records
+- Analysis Layer: Inventory Health Checks
+- Risk Layer: Risk Scoring And Classification
+- Alert Layer: High-Risk Asset Alert Generation
+- Logging Layer: Environment-Tagged Audit, Review, And Alert Events
+- Reporting Layer: Text, JSON, And CSV Health Reports
+- API Output Layer: Console-Based JSON Response For Integration-Style Use
 
-- Relational schema with primary keys and foreign keys
-- Borrowing transaction model
-- Search optimization with an index on client last name
-- Large sample dataset for testing and reporting
-- Example SQL queries for business analysis
+---
 
-## Recommended Environment
+## Asset Health Rules
 
-This project is written in SQL syntax that fits MySQL or MariaDB best because it uses:
+| Check | Rule |
+|---|---|
+| Ownership | Every Asset Should Have An Assigned Owner |
+| Status | Active Assets Are Considered Healthy |
+| Health Check Freshness | Assets Should Be Checked Within 30 Days |
+| Inactive Asset | Requires Operational Review |
+| Database/API Asset | Receives Additional Risk Weighting |
 
-- `CREATE DATABASE`
-- `USE library_database`
-- `YEAR(...)`
-- `LIMIT`
+---
 
-## How to Run the Project
+## Risk Classification
 
-### Option 1: MySQL command line
+| Risk Level | Meaning |
+|---|---|
+| HIGH | Immediate Operational Review Required |
+| MEDIUM | Follow-Up Review Recommended |
+| LOW | No Immediate Action Required |
 
-From the repository folder, run:
+---
 
-```powershell
-mysql -u root -p < schema.sql
-mysql -u root -p library_database < seed_data.sql
-mysql -u root -p library_database < queries.sql
-```
+## Diagnostic Workflow
 
-### Option 2: MySQL Workbench or another SQL IDE
+1. Select Input Source: JSON Or CSV
+2. Load Asset Inventory Records
+3. Check Ownership Status
+4. Check Asset Activity Status
+5. Check Health Review Freshness
+6. Apply Additional Weighting For Database And API Assets
+7. Calculate Risk Score
+8. Classify Asset Risk Level
+9. Log Audit, Review, Or Alert Events
+10. Generate High-Risk Alert File
+11. Generate Human-Readable Report
+12. Optionally Export JSON And CSV Reports
+13. Optionally Print API-Style Output
 
-1. Open `schema.sql` and run it
-2. Open `seed_data.sql` and run it
-3. Open `queries.sql` and run it
-4. Review the query results
+---
 
-## Example Questions This Database Can Answer
+## Output Files
 
-- What are the most frequently borrowed books?
-- Which clients borrow the most items?
-- How many books are in each genre?
-- Which authors have multiple books in the catalog?
-- How many transactions happened each year?
+The system generates:
 
-## Suggested Professional Positioning
+- reports/database_health_report.txt
+- alerts/high_risk_alerts.txt
+- logs/inventory_events.log
 
-A stronger business-facing name for this project is:
+When export options are enabled, it also generates:
 
-**Library Operations Database**
+- reports/database_health_report.json
+- reports/database_health_report.csv
 
-This sounds more practical and recruiter-friendly than a classroom-style title.
+---
 
-## Future Improvements
+## Screenshots
 
-- Add a `ReturnDate` field to track book returns
-- Add a `Staff` table for librarians or administrators
-- Add a `Branch` table for multi-location libraries
-- Add stored procedures for common workflows
-- Add views for reporting dashboards
-- Add constraints for available inventory counts
+### Inventory Check
 
-## Source Note
+![Inventory Check](screenshots/inventory-check.png)
 
-The original SQL content came from the PDF included in this repository and was reorganized into runnable scripts for easier execution and review.
+### Database Health Report
+
+![Database Health Report](screenshots/database-health-report.png)
+
+---
+
+## Project Structure
+
+- data/asset_inventory.json
+- data/asset_inventory.csv
+- reports/database_health_report.txt
+- reports/database_health_report.json
+- reports/database_health_report.csv
+- alerts/high_risk_alerts.txt
+- logs/inventory_events.log
+- screenshots/inventory-check.png
+- screenshots/database-health-report.png
+- inventory_health_checker.py
+- README.md
+- requirements.txt
+
+---
+
+## Technologies Used
+
+- Python
+- JSON
+- CSV
+- CLI Execution
+- Asset Inventory Analysis
+- Risk Scoring
+- Alert Generation
+- Environment-Aware Logging
+- Operational Reporting
+- API-Style JSON Output
+
+---
+
+## How To Run
+
+Run with default JSON source:
+
+python inventory_health_checker.py
+
+Run production-style review with JSON and CSV exports:
+
+python inventory_health_checker.py --env prod --source json --export-json --export-csv
+
+Run using CSV as the input source:
+
+python inventory_health_checker.py --env prod --source csv --export-json --export-csv
+
+Print API-style JSON output:
+
+python inventory_health_checker.py --env prod --source json --api-output
+
+Then review:
+
+- reports/database_health_report.txt
+- reports/database_health_report.json
+- reports/database_health_report.csv
+- alerts/high_risk_alerts.txt
+- logs/inventory_events.log
+
+---
+
+## Planned Enhancements
+
+- Add SQLite Database Storage
+- Add Asset Owner Notification Simulation
+- Add Dashboard View For Asset Health
+- Add Cloud Tagging Policy Checks
+- Add Service Dependency Mapping
+- Add Scheduled Scan Simulation
+- Add REST API Endpoint Using Flask Or FastAPI
+
+---
+
+## Real-World Relevance
+
+This project reflects cloud support and operations responsibilities such as:
+
+- Maintaining Asset Visibility
+- Reviewing Database-Style Inventory Records
+- Identifying Unowned Or Inactive Resources
+- Detecting Stale Health Checks
+- Generating High-Risk Alerts
+- Supporting Operational Accountability
+- Producing Audit-Ready Health Reports
+- Exporting Reports For Team Workflows And Downstream Systems
+
+---
+
+## Professional Positioning
+
+This project is designed as an entry-level cloud operations and asset governance simulation.
+
+It demonstrates the ability to review inventory records, detect operational risk, generate alerts, export reports, and communicate asset health clearly.
